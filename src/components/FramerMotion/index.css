@@ -1,0 +1,16 @@
+
+
+
+.box-container{
+    padding-bottom: 20rem;
+}
+
+.box{
+    width: 15rem;
+    height: 15rem;
+    background-color: aquamarine;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
