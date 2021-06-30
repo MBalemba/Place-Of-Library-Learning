@@ -13,18 +13,16 @@ const Box1 = () => {
                         animate={{
                             x: isAnimate?'40vw': '0',
                             opacity: isAnimate? 1: 0.5,
-                            backgroundColor: isAnimate?'blue':'',
                             rotate: isAnimate? 360: 0
                         }}
 
                         initial={{
-                            opacity: 0.5,
+                            opacity: 0.1,
                         }}
 
                         transition={{
-                            type: 'spring',
-                            stiffness: 100,
-
+                            type: 'keyframes',
+                            stiffness: 60,
                         }
                         }
             >
