@@ -69,7 +69,7 @@ export default function App() {
             >
                 <div className={classes.toolbar} />
                 <List>
-                    {['Framer Motion'].map((text, index) => (
+                    {['Framer Motion', 'Mobx'].map((text, index) => (
                         <ListItem button key={text}>
                             <Link className={'link'} to={text.toLowerCase().split(' ').join('_')}>
                                 {text}

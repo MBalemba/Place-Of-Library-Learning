@@ -1,5 +1,6 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {motion} from 'framer-motion'
+import { useInView } from 'react-intersection-observer';
 
 const Box3 = () => {
 
@@ -34,11 +35,25 @@ const Box3 = () => {
     }
 
 
+    const { ref, inView, entry } = useInView({
+        threshold: 0.7,
+    })
+
+    const [triger, changeTriger] = useState(false)
+
+    useEffect(()=>{
+        console.log(inView);
+        if(inView && !triger){
+            changeTriger(!triger);
+        }
+    })
+
     return (
-        <div className="box-container">
+        <div ref={ref} className="box-container">
             <motion.div className={'box'}
+
                         variants={BoxVariants}
-                        animate={'visible'}
+                        animate={triger ?'visible': ''}
                         initial={'hidden'}
             >
                 {[1, 2, 3].map(box => {

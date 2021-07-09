@@ -1,6 +1,8 @@
 import React from 'react';
 import {Switch, Route} from 'react-router-dom'
 import FramerMotion from "./components/FramerMotion";
+import Description from "./components/Description";
+import {objPath} from "./Routes/pathObj";
 
 const Navigation = () => {
 
@@ -13,9 +15,16 @@ const Navigation = () => {
     return (
         <div style={style.container}>
             <Switch>
-                <Route path="/framer_motion">
-                    <FramerMotion/>
-                </Route>
+
+                {objPath.map(({pathName, component, librarySource, description })=><Route key={pathName} path={pathName} render={()=><>
+                    <Description
+                        href={librarySource}
+                        h1={description}
+                    />
+                    {component}
+                </> }></Route> )}
+
+
             </Switch>
         </div>
     );

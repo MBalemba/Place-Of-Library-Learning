@@ -12,7 +12,7 @@ const Box1 = () => {
 
                         animate={{
                             x: isAnimate?'40vw': '0',
-                            opacity: isAnimate? 1: 0.5,
+                            opacity: isAnimate? 1: 0.1,
                             rotate: isAnimate? 360: 0
                         }}
 
@@ -21,7 +21,7 @@ const Box1 = () => {
                         }}
 
                         transition={{
-                            type: 'keyframes',
+                            type: 'spring',
                             stiffness: 60,
                         }
                         }
