@@ -1,4 +1,4 @@
-import {FRAME_MOTION, MOBX} from "./pathNames";
+import {FRAME_MOTION, MOBX, TABLES_MATERIALUI} from "./pathNames";
 import FramerMotion from "../components/FramerMotion";
 import React from "react";
 import Mobx from "../components/Mobx";
@@ -12,7 +12,7 @@ import Mobx from "../components/Mobx";
 
 export const objPath = [
     {
-        name: 'Frame Motion',
+        name: 'Framer Motion',
         pathName: FRAME_MOTION,
         component: <FramerMotion/>,
         description: 'Данная библиотека служит для анимаций',
@@ -24,6 +24,13 @@ export const objPath = [
         component: <Mobx/>,
         description: 'Библиотека управления стейтом ',
         librarySource: 'https://mobx.js.org/README.html'
-    }
+    },
+    {
+        name: 'Material tables',
+        pathName: TABLES_MATERIALUI,
+        component: <FramerMotion/>,
+        description: 'Данная библиотека служит для анимаций',
+        librarySource: 'https://www.framer.com/api/motion/'
+    },
 
 ]

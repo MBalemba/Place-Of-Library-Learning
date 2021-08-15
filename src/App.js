@@ -13,6 +13,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 import {Link} from 'react-router-dom'
 import Navigation from "./Navigation";
 import './App.css'
+import {objPath} from "./Routes/pathObj";
 
 
 const drawerWidth = 240;
@@ -69,14 +70,14 @@ export default function App() {
             >
                 <div className={classes.toolbar} />
                 <List>
-                    {['Framer Motion', 'Mobx'].map((text, index) => (
-                        <ListItem button key={text}>
-                            <Link className={'link'} to={text.toLowerCase().split(' ').join('_')}>
-                                {text}
+                    {objPath.map((el, index) =>
+                        <ListItem button key={index}>
+                            <Link className={'link'} to={el.name.toLowerCase().split(' ').join('_')}>
+                                {el.name}
                             </Link>
                         </ListItem>
 
-                    ))}
+                    )}
                 </List>
             </Drawer>
 
